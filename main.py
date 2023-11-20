@@ -5,8 +5,7 @@ from dotenv import load_dotenv
 import streamlit as st
 from openai import OpenAI
 from utils.chat_utils import create_thread_run, add_message_and_run
-from utils.assistant_utils import list_assistant_files, delete_assistant_files, upload_files, create_assistant_files
-
+from utils.assistant_utils import upload_files, create_assistant_files
 # Load environment variables
 load_dotenv()
 
@@ -149,6 +148,4 @@ def display_chat_interface():
 
 if __name__ == "__main__":
     main()
-    st.write(st.session_state.messages)
-    st.write(list_assistant_files(st.session_state.assistant_id))
     
