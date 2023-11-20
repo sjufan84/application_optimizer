@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ...head contents... -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.3.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles */
+        .prophet-image {
+            background-image: url('../resources/prophet_background.png'); /* Update the path */
+            background-size: cover;
+            height: 500px; /* Adjust height as needed */
+        }
+        .tool-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-item {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .carousel-item:hover {
+            transform: scale(1.1);
+        }
+        .chat-box {
+            border: 2px solid #DDD;
+            padding: 10px; 
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="prophet-image my-5 rounded-b-btn mb-10">
+            <!-- Prophet Image -->
+        </div>
+        <h2 class="text-center text-2xl font-semibold">What questions doest thou have?</h2>
+        <div class="chat-box my-5 bg-transparent mt-10">
+            <!-- Chat messages -->
+            <div class="bg-transparent shadow-lg rounded-b-box flex-grow p-4">
+                <div class="p-4">
+                    <!-- Chat messages -->
+                    <div class="chat-header mb-2">
+                        PR Prophet
+                    </div>
+                    <div class="chat-bubble bg-black bg-gradient-to-bl from-zinc-600 text-white">
+                        Seek my guidance, and I shall enlighten your path.
+                    </div>
+                    <!-- User's message -->
+                    <div class="chat chat-end">
+                        <div class="chat-image avatar">
+                            <div class="w-10 rounded-full mr-4">
+                                <img src="../resources/cali_fire.png" /> <!-- User icon -->
+                            </div>
+                        </div>
+                        <div class="chat-bubble bg-black bg-gradient-to-tr from-indigo-800 text-white">Oh wise one, can you help me save the humanity in PR?</div>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <div class="p-4">
+                        <textarea class="textarea textarea-bordered w-full" placeholder="Type your message..."></textarea>
+                        <div class="grid grid-cols-3 gap-4 items-center justify-center">
+                            <input type="file" class="file-input file-input-bordered w-full max-w-xs mt-2 bg-zinc-600 text-white" />
+                            <select class="select select-bordered w-full max-w-xs mt-2 bg-black text-white text-accent-content">
+                                <option selected>Oracle Mode</option>
+                                <option>Mystical Insights</option>
+                                <option>Ancient Wisdom</option>
+                            </select>
+                            <button class="btn bg-zinc-600 mt-2 text-white">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="tool-selector my-5">
+            <div class="carousel rounded-box">
+                <!-- Carousel items here -->
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.carousel-item').forEach(item => {
+            item.addEventListener('click', (event) => {
+                const selectedTool = event.target.alt;
+                loadToolFunctionality(selectedTool);
+            });
+        });
+
+        function loadToolFunctionality(toolName) {
+            console.log("Selected Tool: ", toolName);
+            // Implement tool-specific functionality here
+        }
+    </script>
+</body>
+</html>
+```
